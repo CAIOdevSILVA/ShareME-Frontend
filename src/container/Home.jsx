@@ -30,7 +30,7 @@ const Home = () => {
     scrollRef.current.scrollTo(0,0)
   },[])
 
-  let urlImage = userInfo.image
+  let urlImage = userInfo?.image
   
   return (  
     <div className='flex bg-gray-50 md:flex-row flex-col h-screen transition-height duration ease-out'>

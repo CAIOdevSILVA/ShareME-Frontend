@@ -74,7 +74,7 @@ const PinDetails = ({ user }) => {
       >
         <div className="flex justify-center items-center md:items-start flex-initial">
           <img
-            src={pinDetail?.image && urlFor(pinDetail.image).url()}
+            src={pinDetail?.image && urlFor(pinDetail?.image).url()}
             className="rounded-t-3xl rounded-b-lg"
             alt="user-post"
           />
@@ -122,7 +122,7 @@ const PinDetails = ({ user }) => {
                 key={item.comment}
               >
                 <img
-                  src={item.postedBy.image}
+                  src={item.postedBy?.image}
                   alt="user-profile"
                   className="w-10 h-10 rounded-full cursor-pointer"
                 />

@@ -56,6 +56,8 @@ const UserProfile = () => {
     return <Spinner message={"Loading Profile..."} />;
   }
 
+  
+
   const removeToLocalStorage = () => localStorage.clear();
 
   return (
@@ -70,14 +72,14 @@ const UserProfile = () => {
             />
             <img
               className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
-              src={user.image}
+              src={user?.image}
               alt="user-pic"
             />
             <h1 className="font-bold text-3xl text-center mt-3">
-              {user.userName}
+              {user?.userName}
             </h1>
             <div className="absolute top-0 z-1 right-0 p-2">
-              {userId === user._id && (
+              {userId === user?._id && (
                 <button
                   className="flex items-center p-2 text-red-500 rounded-md bg-gray-100"
                   onClick={() => {

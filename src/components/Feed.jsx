@@ -31,7 +31,6 @@ const Feed = () => {
           setLoading(false);
       })
     }
-    console.log(categoryId)
   }, [categoryId])
   
 
@@ -42,7 +41,6 @@ const Feed = () => {
 
   return (
     <div>
-      {console.log(pins)}
       {pins && <MasonryLayout pins={pins}/>}
     </div>
   )

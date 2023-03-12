@@ -13,7 +13,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   const [savingPost, setSavingPost] = useState(false);
   const user = fetchUser();
 
-  const alreadySaved = !!save?.filter((item) => item.postedBy._id === user.sub)
+  const alreadySaved = !!save?.filter((item) => item.postedBy._id === user?.sub)
     ?.length;
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -107,7 +107,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   {destination.slice(8, 17)}
                 </a>
               )}
-              {postedBy?._id === user.sub && (
+              {postedBy?._id === user?.sub && (
                 <button
                   type="button"
                   onClick={(e) => {
@@ -123,7 +123,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           </div>
         )}
       </div>
-      <Link to={`user-profile/${postedBy._id}`} className='flex gap-2 mt-2 items-center'>
+      <Link to={`user-profile/${postedBy?._id}`} className='flex gap-2 mt-2 items-center'>
         <img className='w-8 h-8 rounded-full object-cover' src={postedBy?.image} alt="user-prfile"/>
         <p className="font-semibold capitalize">
           {postedBy?.userName}

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
-import { v4 as uuidv4 } from "uuid";
+
 
 import logo from "../assets/logo.png";
 
@@ -54,7 +54,7 @@ const SideBar = ({ user, closeToggle }) => {
               onClick={handleCloseSidebar}
               key={category.name}
             >  
-            <img src={category.image} className='w-8 h-8 rounded-full shadow-sm' alt="category"/>
+            <img src={category?.image} className='w-8 h-8 rounded-full shadow-sm' alt="category"/>
             {category.name}           
             </NavLink>
           ))}
@@ -63,12 +63,12 @@ const SideBar = ({ user, closeToggle }) => {
 
       {user && (
         <Link
-          to={`user-profile/${user._id}`}
+          to={`user-profile/${user?._id}`}
           className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3'
           onClick={handleCloseSidebar}
         >
-          <img src={user.image} className='w-10 h-10 rounded-full' alt="user-profile" />
-          {user.userName}
+          <img src={user?.image} className='w-10 h-10 rounded-full' alt="user-profile" />
+          {user?.userName}
         </Link>
       )}
     </div>
